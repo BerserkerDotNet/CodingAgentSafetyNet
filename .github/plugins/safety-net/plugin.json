@@ -1,0 +1,18 @@
+{
+  "name": "safety-net",
+  "description": "preToolUse hook that intercepts dangerous git, publish, and destructive operations with context-aware permission prompts.",
+  "version": "1.0.0",
+  "author": {
+    "name": "BerserkerDotNet",
+    "email": "noreply@example.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "copilot-cli",
+    "safety",
+    "hooks",
+    "git",
+    "guard",
+    "preToolUse"
+  ]
+}

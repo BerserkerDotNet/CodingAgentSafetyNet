@@ -1,0 +1,19 @@
+{
+  "name": "coding-agent-safety-net-marketplace",
+  "owner": {
+    "name": "BerserkerDotNet",
+    "email": "noreply@example.com"
+  },
+  "metadata": {
+    "description": "Plugin marketplace for Coding Agent Safety Net — guards dangerous operations in Copilot CLI.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "safety-net",
+      "description": "preToolUse hook that intercepts dangerous git, publish, and destructive operations with context-aware permission prompts.",
+      "version": "1.0.0",
+      "source": ".github/plugins/safety-net"
+    }
+  ]
+}
