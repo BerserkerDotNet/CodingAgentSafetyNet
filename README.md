@@ -24,30 +24,33 @@ The hook is now active for all future sessions.
 
 ### Option 2: Manual Install
 
-1. Create the hooks directory (if it doesn't exist):
+1. Copy `hooks.json` into your repo's `.github/hooks/` directory:
    ```powershell
-   New-Item -ItemType Directory -Path "$HOME\.copilot\hooks" -Force
+   New-Item -ItemType Directory -Path ".github\hooks" -Force
+   Copy-Item .github/plugins/safety-net/hooks.json ".github\hooks\"
+   Copy-Item .github/plugins/safety-net/guard-dangerous-ops.ps1 ".github\hooks\"
    ```
 
-2. Copy the hook script:
-   ```powershell
-   Copy-Item .github/plugins/safety-net/guard-dangerous-ops.ps1 "$HOME\.copilot\hooks\"
-   ```
-
-3. Register the hook in `~/.copilot/config.json` — add the `hooks` key at the top level:
+2. Update the paths in `.github/hooks/hooks.json` to point to the script's new location:
    ```json
    {
+     "version": 1,
      "hooks": {
        "preToolUse": [
          {
            "type": "command",
-           "powershell": "& '$HOME\\.copilot\\hooks\\guard-dangerous-ops.ps1'",
+           "powershell": ".github/hooks/guard-dangerous-ops.ps1",
+           "bash": "pwsh -NoProfile -File .github/hooks/guard-dangerous-ops.ps1",
+           "cwd": ".",
            "timeoutSec": 10
          }
        ]
      }
    }
    ```
+
+   Or, to install as a **user-level** hook (applies to all repos), copy to `~/.copilot/hooks/`
+   and add the hook entry to `~/.copilot/config.json` under the `hooks` key.
 
 ### Verify Installation
 

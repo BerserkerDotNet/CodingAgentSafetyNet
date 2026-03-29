@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "type": "command",
+        "powershell": ".github/plugins/safety-net/guard-dangerous-ops.ps1",
+        "bash": "pwsh -NoProfile -File .github/plugins/safety-net/guard-dangerous-ops.ps1",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}
