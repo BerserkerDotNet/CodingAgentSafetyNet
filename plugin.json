@@ -1,7 +1,7 @@
 {
   "name": "safety-net",
   "description": "preToolUse hook that intercepts dangerous git, publish, and destructive operations with context-aware permission prompts.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": {
     "name": "BerserkerDotNet",
     "email": "noreply@example.com"
@@ -15,5 +15,5 @@
     "guard",
     "preToolUse"
   ],
-  "hooks": "guard-dangerous-ops/hooks.json"
+  "hooks": "hooks.json"
 }

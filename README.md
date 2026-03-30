@@ -24,13 +24,14 @@ The hook is now active for all future sessions.
 
 ### Option 2: Manual Install
 
-1. Copy the hook folder into your repo's `.github/hooks/` directory:
+1. Copy the hook files into your repo's `.github/hooks/` directory:
    ```powershell
-   New-Item -ItemType Directory -Path ".github\hooks" -Force
-   Copy-Item -Recurse guard-dangerous-ops ".github\hooks\"
+   New-Item -ItemType Directory -Path ".github\hooks\guard-dangerous-ops" -Force
+   Copy-Item guard-dangerous-ops\guard-dangerous-ops.ps1 ".github\hooks\guard-dangerous-ops\"
+   Copy-Item hooks.json ".github\hooks\"
    ```
 
-2. Update the paths in `.github/hooks/guard-dangerous-ops/hooks.json`:
+2. Update the script path in `.github/hooks/hooks.json`:
    ```json
    {
      "version": 1,
@@ -111,4 +112,4 @@ or modify patterns. Each entry has:
 
 ## License
 
-MIT
+[MIT](LICENSE)
