@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "type": "command",
+        "powershell": "./guard-dangerous-ops.ps1",
+        "bash": "pwsh -NoProfile -File ./guard-dangerous-ops.ps1",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

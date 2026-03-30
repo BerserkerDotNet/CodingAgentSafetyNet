@@ -12,8 +12,8 @@
     {
       "name": "safety-net",
       "description": "preToolUse hook that intercepts dangerous git, publish, and destructive operations with context-aware permission prompts.",
-      "version": "1.1.0",
-      "source": ".github/plugins/safety-net"
+      "version": "1.2.0",
+      "source": "."
     }
   ]
 }

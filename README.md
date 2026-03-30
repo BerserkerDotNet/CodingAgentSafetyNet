@@ -24,14 +24,13 @@ The hook is now active for all future sessions.
 
 ### Option 2: Manual Install
 
-1. Copy `hooks.json` into your repo's `.github/hooks/` directory:
+1. Copy the hook folder into your repo's `.github/hooks/` directory:
    ```powershell
    New-Item -ItemType Directory -Path ".github\hooks" -Force
-   Copy-Item .github/plugins/safety-net/hooks.json ".github\hooks\"
-   Copy-Item .github/plugins/safety-net/guard-dangerous-ops.ps1 ".github\hooks\"
+   Copy-Item -Recurse guard-dangerous-ops ".github\hooks\"
    ```
 
-2. Update the paths in `.github/hooks/hooks.json` to point to the script's new location:
+2. Update the paths in `.github/hooks/guard-dangerous-ops/hooks.json`:
    ```json
    {
      "version": 1,
@@ -39,9 +38,8 @@ The hook is now active for all future sessions.
        "preToolUse": [
          {
            "type": "command",
-           "powershell": ".github/hooks/guard-dangerous-ops.ps1",
-           "bash": "pwsh -NoProfile -File .github/hooks/guard-dangerous-ops.ps1",
-           "cwd": ".",
+           "powershell": ".github/hooks/guard-dangerous-ops/guard-dangerous-ops.ps1",
+           "bash": "pwsh -NoProfile -File .github/hooks/guard-dangerous-ops/guard-dangerous-ops.ps1",
            "timeoutSec": 10
          }
        ]

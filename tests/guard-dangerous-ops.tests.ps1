@@ -8,7 +8,7 @@
 #>
 
 $ErrorActionPreference = 'Stop'
-$scriptPath = Join-Path $PSScriptRoot '..' '.github' 'plugins' 'safety-net' 'guard-dangerous-ops.ps1'
+$scriptPath = Join-Path $PSScriptRoot '..' 'guard-dangerous-ops' 'guard-dangerous-ops.ps1'
 $scriptPath = (Resolve-Path $scriptPath).Path
 
 $passed = 0
